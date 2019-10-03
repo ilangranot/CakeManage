@@ -345,6 +345,6 @@ if($site=='VTIGER') {
 	echo " CRM Database: ok".'<br>';
 }
 
-else {	echo "this name is engaged";}
+else {	echo "this name is already in use";}
 }
 ?>
