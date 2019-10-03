@@ -232,32 +232,33 @@ else {	echo "this name is engaged";}
 		shell_exec("cat $configphp | sed s/@@VARIABLE@@/$name/mg > $tmp_name");
 		shell_exec("cat $tmp_name  | sed s/@@PASSWORD@@/$password/mg > $tmp_pass");
 
+		// For evaluations purposes 
 		$tmp_unique1  = $destination.'/wp-config.php.tmp_uniqe1';
-		$tmp_unique2  = $destination.'/wp-config.php.tmp_uniqe2';
-		$tmp_unique3  = $destination.'/wp-config.php.tmp_uniqe3';
-		$tmp_unique4  = $destination.'/wp-config.php.tmp_uniqe4';
-		$tmp_unique5  = $destination.'/wp-config.php.tmp_uniqe5';
-		$tmp_unique6  = $destination.'/wp-config.php.tmp_uniqe6';
-		$tmp_unique7  = $destination.'/wp-config.php.tmp_uniqe7';
-		$tmp_unique8  = $destination.'/wp-config.php.tmp_uniqe8';
+// 		$tmp_unique2  = $destination.'/wp-config.php.tmp_uniqe2';
+// 		$tmp_unique3  = $destination.'/wp-config.php.tmp_uniqe3';
+// 		$tmp_unique4  = $destination.'/wp-config.php.tmp_uniqe4';
+// 		$tmp_unique5  = $destination.'/wp-config.php.tmp_uniqe5';
+// 		$tmp_unique6  = $destination.'/wp-config.php.tmp_uniqe6';
+// 		$tmp_unique7  = $destination.'/wp-config.php.tmp_uniqe7';
+// 		$tmp_unique8  = $destination.'/wp-config.php.tmp_uniqe8';
 
 		$unique1 = random(64);
-		$unique2 = random(64);
-		$unique3 = random(64);
-		$unique4 = random(64);
-		$unique5 = random(64);
-		$unique6 = random(64);
-		$unique7 = random(64);
-		$unique8 = random(64);
+// 		$unique2 = random(64);
+// 		$unique3 = random(64);
+// 		$unique4 = random(64);
+// 		$unique5 = random(64);
+// 		$unique6 = random(64);
+// 		$unique7 = random(64);
+// 		$unique8 = random(64);
 
 		shell_exec("cat $tmp_pass	 | sed s/@@UNIQUE1@@/$unique1/mg > $tmp_unique1");
-		shell_exec("cat $tmp_unique1 | sed s/@@UNIQUE2@@/$unique2/mg > $tmp_unique2");
-		shell_exec("cat $tmp_unique2 | sed s/@@UNIQUE3@@/$unique3/mg > $tmp_unique3");
-		shell_exec("cat $tmp_unique3 | sed s/@@UNIQUE4@@/$unique4/mg > $tmp_unique4");
-		shell_exec("cat $tmp_unique4 | sed s/@@UNIQUE5@@/$unique5/mg > $tmp_unique5");
-		shell_exec("cat $tmp_unique5 | sed s/@@UNIQUE6@@/$unique6/mg > $tmp_unique6");
-		shell_exec("cat $tmp_unique6 | sed s/@@UNIQUE7@@/$unique7/mg > $tmp_unique7");
-		shell_exec("cat $tmp_unique7 | sed s/@@UNIQUE8@@/$unique8/mg > $tmp_unique8");
+// 		shell_exec("cat $tmp_unique1 | sed s/@@UNIQUE2@@/$unique2/mg > $tmp_unique2");
+// 		shell_exec("cat $tmp_unique2 | sed s/@@UNIQUE3@@/$unique3/mg > $tmp_unique3");
+// 		shell_exec("cat $tmp_unique3 | sed s/@@UNIQUE4@@/$unique4/mg > $tmp_unique4");
+// 		shell_exec("cat $tmp_unique4 | sed s/@@UNIQUE5@@/$unique5/mg > $tmp_unique5");
+// 		shell_exec("cat $tmp_unique5 | sed s/@@UNIQUE6@@/$unique6/mg > $tmp_unique6");
+// 		shell_exec("cat $tmp_unique6 | sed s/@@UNIQUE7@@/$unique7/mg > $tmp_unique7");
+// 		shell_exec("cat $tmp_unique7 | sed s/@@UNIQUE8@@/$unique8/mg > $tmp_unique8");
 		shell_exec("mv  $tmp_unique8 $configphp");
 		echo "BLOG Config File: ok ".'<br>';
 		$new_db = "CakeBLOGdb_".$name;	//$host = 'localhost';
