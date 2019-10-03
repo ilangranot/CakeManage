@@ -180,16 +180,17 @@ if (!file_exists($destination)) {
 		shell_exec("mkdir $destination");
 		shell_exec("cp -apR $source/* $destination");	//copy_directory( $source, $destination );
 		echo "JCMS Files copy: ok".'<br>';
-
+		
+		// For evaluation purposes
 		$configincphp = $destination.'/configuration.php';
-		$tmp1 		  = $destination.'/configuration.php.tmp1';
-		$tmp2         = $destination.'/configuration.php.tmp2';
-		$tmp3         = $destination.'/configuration.php.tmp3';
+// 		$tmp1 	      = $destination.'/configuration.php.tmp1';
+// 		$tmp2         = $destination.'/configuration.php.tmp2';
+// 		$tmp3         = $destination.'/configuration.php.tmp3';
 
 	    $unique = random(16);
 		shell_exec("cat $configincphp | sed s/@@VARIABLE@@/$name/mg > $tmp1");
-		shell_exec("cat $tmp1 | sed s/@@PASSWORD@@/$password/mg > $tmp2");
-		shell_exec("cat $tmp2 | sed s/@@UNIQUE@@/$unique/mg > $tmp3");
+// 		shell_exec("cat $tmp1 | sed s/@@PASSWORD@@/$password/mg > $tmp2");
+// 		shell_exec("cat $tmp2 | sed s/@@UNIQUE@@/$unique/mg > $tmp3");
 		shell_exec("mv  $tmp3 $configincphp");
 		echo "JCMS Config File: ok".'<br>';
 
@@ -225,14 +226,14 @@ else {	echo "this name is engaged";}
 		shell_exec("cp -apR $source/* $destination");	//copy_directory( $source, $destination );
 		echo "BLOG Files copy: ok ".'<br>';
 
+		// For evaluations purposes 
 		$configphp = $destination.'/wp-config.php';
-		$tmp_name  = $destination.'/wp-config.php.tmp_name';
-		$tmp_pass  = $destination.'/wp-config.php.tmp_pass';
+// 		$tmp_name  = $destination.'/wp-config.php.tmp_name';
+// 		$tmp_pass  = $destination.'/wp-config.php.tmp_pass';
 
 		shell_exec("cat $configphp | sed s/@@VARIABLE@@/$name/mg > $tmp_name");
 		shell_exec("cat $tmp_name  | sed s/@@PASSWORD@@/$password/mg > $tmp_pass");
 
-		// For evaluations purposes 
 		$tmp_unique1  = $destination.'/wp-config.php.tmp_uniqe1';
 // 		$tmp_unique2  = $destination.'/wp-config.php.tmp_uniqe2';
 // 		$tmp_unique3  = $destination.'/wp-config.php.tmp_uniqe3';
@@ -285,7 +286,7 @@ else {	echo "this name is engaged";}
 
 		echo "BLOG Database: ok ".'<br>';
 	}
-else {	echo "this name is engaged";}
+else {	echo "this name is already used";}
 
 
 
@@ -299,11 +300,12 @@ if($site=='VTIGER') {
 	shell_exec("cp -apR $source/* $destination");	//copy_directory( $source, $destination );
 	echo " CRM Files copy: ok".'<br>';
 
+	// For evaluation purposes
 	$configincphp = $destination.'/config.inc.php';
 	$tmp1 		  = $destination.'/config.inc.php.tmp1';
-	$tmp2         = $destination.'/config.inc.php.tmp2';
-	$tmp3         = $destination.'/config.inc.php.tmp3';
-	$tmp4         = $destination.'/config.inc.php.tmp4';
+// 	$tmp2         = $destination.'/config.inc.php.tmp2';
+// 	$tmp3         = $destination.'/config.inc.php.tmp3';
+// 	$tmp4         = $destination.'/config.inc.php.tmp4';
 	$unique = random(32);
 
 	shell_exec("cat $configincphp | sed s/@@VARIABLE@@/$name/mg > $tmp1");
